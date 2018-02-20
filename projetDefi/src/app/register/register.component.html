@@ -1,0 +1,27 @@
+<div  class="container article">
+  <h1>Inscription</h1>
+  <br />
+    <form [formGroup]="formdata" (ngSubmit) = "onClickSubmit(formdata.value)"> 
+      <div class="custom-select">
+        Civilité :
+        <select formControlName="registerCiv">
+            <option *ngFor="let i of civiliteList" name="registerCiv">{{i}}</option>
+        </select>
+      </div>
+      Nom :<br><input type="text" name="registerLastName" formControlName="registerLastName"><br>
+      Prénom :<br><input type="text" name="registerFirstName" formControlName="registerFirstName"><br>
+      <div class="custom-select">
+        Age :
+        <select formControlName="registerAge">
+            <option *ngFor="let i of ageList" name="registerAge">{{i}}</option>
+        </select>
+      </div>
+      <br>
+      Pseudo :<br><input type="text" name="registerPseudo" formControlName="registerPseudo"><br>
+      Adressse e-mail :<br><input type="text" name="registerEmail" formControlName="registerEmail"><br>
+      Mot de passe :<br><input type="password" name="registerPassword" formControlName="registerPassword"><br>
+      Confirmation du mot de passe :<br><input type="password" name="registerPasswordVerif" formControlName="registerPasswordVerif"><br><br>
+      <br><br>
+      <button [disabled]="!formdata.valid" class="formsubmit" value="Register">Envoyer</button>
+    </form>  
+</div>

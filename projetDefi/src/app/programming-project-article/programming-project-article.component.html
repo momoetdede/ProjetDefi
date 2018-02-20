@@ -1,0 +1,17 @@
+<div  class="container article">
+  <h1>Programming project</h1>
+  <p>You know some programming and you would like to try it on a new project ? You want to start a fresh project from start to try to launch your web or software buiseness ?
+  <br />
+  Pick one of the project listed above to train your programming skills with defined steps, latest frameworks and fresh ideas !
+  </p>
+    <form> 
+      <div class="custom-select">
+        <h3>{{ProgrammingProjectFormTitles[0]}} : </h3>
+        <select>
+            <option *ngFor="let i of ProgrammingProjectCategories">{{i}}</option>
+        </select>
+      </div>
+      <br><br>
+      <button type="submit" target="_blank">Save your choice</button>
+    </form>  
+</div>

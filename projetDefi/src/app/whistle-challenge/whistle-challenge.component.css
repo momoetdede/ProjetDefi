@@ -1,0 +1,26 @@
+.article
+{
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+    height: 100%;
+	margin-left:5%;
+	margin-right: 5%;
+    overflow: auto;
+	margin-bottom: 40px;
+	color: rgb(100, 100, 100);
+}
+
+.article h3
+{
+    font-family: customFontTitle, Tahoma, Geneva, sans-serif;
+    color :rgb(207, 52, 52);
+}
+
+.custom-select select{
+    width: 50px;
+    padding: 3px 5px;
+    margin: 2px 0;
+    box-sizing: border-box;
+	color: rgb(100, 100, 100);
+}

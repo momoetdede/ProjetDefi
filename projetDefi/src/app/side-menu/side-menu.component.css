@@ -1,0 +1,17 @@
+.block_cote
+{
+	display: flex;
+	background-color: #555554;
+	width:120px;
+	height: 80px;
+	margin: 10px;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	transition: all linear 0.1s;
+}
+
+.block_cote:hover
+{
+	background-color:rgb(207, 52, 52);
+}

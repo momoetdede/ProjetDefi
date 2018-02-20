@@ -1,0 +1,161 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+	font-family: customFontText;
+	src: url(app/fonts/roboto/Roboto-Regular.ttf);
+}
+@font-face {
+	font-family: customFontTitle;
+	src: url(app/fonts/roboto/Roboto-Thin.ttf);
+}
+  
+html,
+.body-sub,
+body
+{
+  	display:flex;
+ 	flex-direction:column;
+	background-color: rgb(250, 250, 250);
+	margin: 0px;
+	font-size:  15px;
+	/*height:100%;*/
+	font-family: customFontText, Tahoma, Geneva, sans-serif;
+}
+
+a
+{
+	text-decoration: none;
+    color:#FEFEFE;
+	font-family: customFontTitle, Tahoma, Geneva, sans-serif;
+}
+
+h1
+{
+	text-align: center;
+	color: rgb(82, 82, 82);
+	font-family: customFontTitle, Tahoma, Geneva, sans-serif;
+}
+
+
+p{
+	font-family: customFontText, Tahoma, Geneva, sans-serif;
+	text-align: justify;
+}
+
+
+input[type=text],input[type=password],button {
+    width: 50%;
+    padding: 6px 10px;
+    margin: 4px 0;
+    box-sizing: border-box;
+	color: rgb(100, 100, 100);
+}
+
+
+.container .body-sub{
+	display: flex;
+	flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+.item 
+{
+	text-align: center;
+}
+
+.bandeautop1{
+    display: flex;
+    width: 100%;
+    height: 20px;
+    background-color: rgb(48, 48, 48);
+	min-width: 500px;
+}
+.bandeautop2{
+    display: flex;
+    width: 100%;
+    height: 10px;
+    background-color: rgb(68, 68, 68);
+	min-width: 500px;
+}
+
+
+.centre
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    min-height:562px;
+    width:100%;
+	min-width: 500px;
+}
+
+.menu_cote
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+    background-color: #E9E9E9;
+    width: 25%;
+	min-width: 100px;
+    order:1;
+    overflow: auto;
+}
+
+
+
+.main
+{
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	width:55%;
+	min-width: 200px;
+    height: 100%;
+	order:2;	
+	margin-left:5%;
+	margin-right: 5%;
+    overflow: auto;
+}
+
+
+
+.aside
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: left;
+	width: 20%;
+	min-width: 100px;
+	order: 3;
+	overflow: auto;
+}
+
+.aside .item
+{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+
+.aside h3, .aside a
+{
+	color: rgb(207, 52, 52);
+	font-family: customFontTitle, Tahoma, Geneva, sans-serif;
+	font-style: bold;
+}
+
+
+.footer
+{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	height:20px;
+	background-color: #131A19;
+	font-size: 8px;
+	color: #FEFEFE;
+}
