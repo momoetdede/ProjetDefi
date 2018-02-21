@@ -14,7 +14,14 @@ export class WhistleChallengeComponent implements OnInit {
 
   registerWhistleChallenge(){
     let userData = JSON.parse(sessionStorage.getItem('user'));
-    userData.whistleChallenge = 'active';
+    userData.currentChallenge = 'Whistle challenge';
+    if(userData.activeChallenges==null){
+      userData.activeChallenges = [];
+    }
+    if (!userData.activeChallenges.some(item => item.challengeName === "Whistle challenge")){
+      console.log("add whistle challenge")
+      userData['activeChallenges'].push({"challengeName":"Whistle challenge","challengeStatus":"active","challengeDay":"8"});
+    }
     let userStr = JSON.stringify(userData);
     sessionStorage.user = userStr;
   }

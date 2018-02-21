@@ -1,5 +1,7 @@
 .block_cote
 {
+	--current-background-color:rgb(236, 170, 26);
+	--done-background-color:#CF3434;
 	display: flex;
 	background-color: #555554;
 	width:120px;
@@ -9,9 +11,15 @@
 	align-items: center;
 	font-weight: bold;
 	transition: all linear 0.1s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .block_cote:hover
 {
 	background-color:rgb(207, 52, 52);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+#one{
+	background-color: #CF3434;
 }

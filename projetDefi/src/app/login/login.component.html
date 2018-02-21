@@ -1,9 +1,9 @@
 <div class="item item-aside">
   <div *ngIf="boolConnected=='false' || boolConnected==null; else logged;">
-    <h3>Connexion</h3>
+    <h3>Sign in</h3>
     <form [formGroup]="formdata" (ngSubmit) = "onClickSubmit(formdata.value)">
-        E-mail :<br><input type="text" name="email" formControlName="email"><br>
-        Mot de passe :<br><input type="password" name="password" formControlName="password"><br>
+        E-mail:<br><input type="text" name="email" formControlName="email"><br>
+        Password:<br><input type="password" name="password" formControlName="password"><br>
         <button [disabled]="!formdata.valid" class="formsubmit" value="Login">OK</button><br>
     </form>
     <a routerLink="/register"><h4>Register</h4></a>

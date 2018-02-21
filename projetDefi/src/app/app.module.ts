@@ -18,6 +18,7 @@ import { RegisterComponent } from './register/register.component';
 import { RegisterService } from './register/register.service';
 import { ChallengesArticleComponent } from './challenges-article/challenges-article.component';
 import { WhistleChallengeComponent } from './whistle-challenge/whistle-challenge.component';
+import { UserService } from './user/user.service';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,7 @@ import { WhistleChallengeComponent } from './whistle-challenge/whistle-challenge
       }
    ])
   ],
-  providers: [LoginService, RegisterService],
+  providers: [LoginService, RegisterService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
