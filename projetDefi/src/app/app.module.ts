@@ -4,7 +4,7 @@ import { RouterModule} from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-
+import { LoginGuard } from './login/login.guard';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -41,18 +41,20 @@ import { UserService } from './user/user.service';
     RouterModule.forRoot([
       {
         path: 'home',
-        component: LoginArticleComponent
-      },
-      {
-        path: 'main-component',
         component: MainArticleComponent
       },
       {
+        path: 'login-component',
+        component: LoginArticleComponent
+      },
+      {
         path: 'challenges-component',
+        canActivate: [LoginGuard],
         component: ChallengesArticleComponent
       },
       {
         path: 'whistle-challenge',
+        canActivate: [LoginGuard],
         component: WhistleChallengeComponent
       },
       {
@@ -61,6 +63,7 @@ import { UserService } from './user/user.service';
       },
       {
         path: 'programming-project',
+        canActivate: [LoginGuard],
         component: ProgrammingProjectArticleComponent
       },
       {
@@ -75,7 +78,7 @@ import { UserService } from './user/user.service';
       }
    ])
   ],
-  providers: [LoginService, RegisterService, UserService],
+  providers: [LoginService, RegisterService, UserService, LoginGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

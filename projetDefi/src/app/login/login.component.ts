@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, private user:LoginService) { 
     if(sessionStorage.getItem('user')==null){
       let userData = {
-        "connected":"false"
+        "connected":false
       };
 
       let strUser = JSON.stringify(userData);
@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
             alert("Login Successful");
             /**************** Ici sont enregistrées les données de session ******************/
             let userData = {
-              "connected":"true",
+              "connected":true,
               "pseudo":this.pseudo
             };
 
@@ -74,12 +74,12 @@ export class LoginComponent implements OnInit {
 
             sessionStorage.setItem('user',strUser);
             /********************************************************************************/
-            this.boolConnected='true';
+            this.boolConnected=true;
             console.log(this.boolConnected);
             this.router.navigate(['main-component']);
            } else {
             alert("Invalid Login");
-            this.boolConnected='false';
+            this.boolConnected=false;
             this.router.navigate(['']);
             return false;
           }

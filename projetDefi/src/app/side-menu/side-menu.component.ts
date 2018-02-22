@@ -9,16 +9,6 @@ import { UserService } from '../user/user.service';
 })
 export class SideMenuComponent implements OnInit,AfterViewInit {
 
-  oneStatus = "done";
-  twoStatus = "done";
-  threeStatus = "done";
-  fourStatus = "done";
-  fiveStatus = "done";
-  sixStatus = "current";
-  sevenStatus = "";
-  eightStatus = " ";
-  nineStatus = " ";
-  tenStatus = " ";
   @ViewChild('one') one:ElementRef;
   @ViewChild('two') two:ElementRef;
   @ViewChild('three') three:ElementRef;
@@ -45,7 +35,7 @@ export class SideMenuComponent implements OnInit,AfterViewInit {
   ngAfterViewInit() {
 
     if(this.challengeDay == "1"){
-      this.one.nativeElement.style.setProperty('background-color','rgb(207, 127, 52)');
+      this.one.nativeElement.style.setProperty('background-color','var(--current-background-color)');
     }
     else if(this.challengeDay == "2"){
       this.one.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');

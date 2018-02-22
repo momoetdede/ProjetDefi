@@ -4,18 +4,19 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class LoginService {
 
-  private userLoggedIn = 'false';
+  private userLoggedIn = false;
   private userPseudo;
 
   constructor(private httpClient: HttpClient) {
    }
 
   setUserLoggedIn(){
-    this.userLoggedIn = 'true';
+    this.userLoggedIn = true;
   }
 
    getUserLoggedIn(){
-    return this.userLoggedIn;
+    let dataUser = JSON.parse(sessionStorage.getItem('user'));
+    return dataUser.connected;
   }
 
   setUserPseudo(pseudo){

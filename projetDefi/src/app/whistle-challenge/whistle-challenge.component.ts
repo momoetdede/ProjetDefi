@@ -20,7 +20,10 @@ export class WhistleChallengeComponent implements OnInit {
     }
     if (!userData.activeChallenges.some(item => item.challengeName === "Whistle challenge")){
       console.log("add whistle challenge")
-      userData['activeChallenges'].push({"challengeName":"Whistle challenge","challengeStatus":"active","challengeDay":"8"});
+      userData['activeChallenges'].push({"challengeName":"Whistle challenge","challengeStatus":"active","challengeDay":"1"});
+      location.reload();
+    } else {
+      alert("Challenge already saved.");
     }
     let userStr = JSON.stringify(userData);
     sessionStorage.user = userStr;

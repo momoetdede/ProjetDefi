@@ -16,9 +16,11 @@ export class UserService {
 
   getCurrentChallengeDay(){
     let currentChallenge = this.userData.currentChallenge;
-    for (var i = 0; i < this.userData.activeChallenges.length; i++){
-      if (this.userData.activeChallenges[i].challengeName == currentChallenge){
-         return this.userData.activeChallenges[i].challengeDay;
+    if(currentChallenge != null){
+      for (var i = 0; i < this.userData.activeChallenges.length; i++){
+        if (this.userData.activeChallenges[i].challengeName == currentChallenge){
+            return this.userData.activeChallenges[i].challengeDay;
+        }
       }
     }
   }
