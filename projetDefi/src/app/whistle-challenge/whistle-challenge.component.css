@@ -24,3 +24,15 @@
     box-sizing: border-box;
 	color: rgb(100, 100, 100);
 }
+
+.container .back-next{
+    display: flex;
+    width:100%;
+    flex-direction: row;
+    justify-content:space-between;
+    border: 5px red;
+}
+
+.container .back-next button{
+    width:20%;
+}

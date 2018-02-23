@@ -8,7 +8,7 @@ export class RegisterService {
 
   sendRegisterInfo(civ,nom,prenom,age,pseudo,email,password) {
     console.log("envoi")
-    console.log("http://localhost:8080/projet/register-service?var1=register&var2="+civ+
+    console.log("http://192.168.1.38:8080/projet/register-service?var1=register&var2="+civ+
     '&var3='+nom+
     '&var4='+prenom+
     '&var5='+age+
@@ -16,7 +16,7 @@ export class RegisterService {
     '&var7='+email+
     '&var8='+password
     )
-    return this.httpClient.get("http://localhost:8080/projet/register-service?var1=register&var2="+civ+
+    return this.httpClient.get("http://192.168.1.38:8080/projet/register-service?var1=register&var2="+civ+
     '&var3='+nom+
     '&var4='+prenom+
     '&var5='+age+

@@ -7,10 +7,13 @@
         <button [disabled]="!formdata.valid" class="formsubmit" value="Login">OK</button><br>
     </form>
     <a routerLink="/register"><h4>Register</h4></a>
-    <a href="#"><h4>Forgotten password?</h4></a> 
+    <a routerLink="/register"><h4>Forgotten password?</h4></a> 
   </div>
   <ng-template #logged>
-    <p>Bienvenue {{pseudo}} !</p>
+    <h3>Welcome {{pseudo}} !</h3>
+    <div *ngIf="currentChallenge!='';">
+      <p>Current challenge: {{currentChallenge}} !</p>
+    </div>
   </ng-template>
   
 </div>

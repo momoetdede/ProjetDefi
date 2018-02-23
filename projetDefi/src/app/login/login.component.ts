@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router} from '@angular/router';
 import { LoginService } from './login.service';
+import { UserService } from '../user/user.service';
 
 
 @Component({
@@ -13,12 +14,13 @@ export class LoginComponent implements OnInit {
 
   boolConnected;
   pseudo;
+  currentChallenge;
   formdata;
   code;
   message;
   successCode = "200";
 
-  constructor(private router: Router, private user:LoginService) { 
+  constructor(private router: Router, private user:LoginService, private userInfo:UserService) { 
     if(sessionStorage.getItem('user')==null){
       let userData = {
         "connected":false
@@ -34,6 +36,7 @@ export class LoginComponent implements OnInit {
       this.pseudo = dataUser.pseudo;
       console.log(this.boolConnected);
     }
+    this.currentChallenge = userInfo.getCurrentChallengeName();
   }
   ngOnInit() {
      this.formdata = new FormGroup({

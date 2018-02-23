@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { UserService } from '../user/user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -22,10 +23,21 @@ export class SideMenuComponent implements OnInit,AfterViewInit {
   user: UserService;
   currentChallenge;
   challengeDay;
+  router: Router;
 
-  constructor(user: UserService) { 
+  constructor(user: UserService,router:Router) { 
     this.user = user;
+    this.router = router;
   }
+
+  goToChallengeDayArticle(value){
+    this.user.setCurrentChallengeDay(value);
+    if(this.currentChallenge=="Whistle challenge"){
+      this.router.navigate(['/whistle-challenge']);
+      location.reload();
+    }
+  }
+
 
   ngOnInit() {
     this.currentChallenge = this.user.getCurrentChallengeName();
@@ -34,32 +46,34 @@ export class SideMenuComponent implements OnInit,AfterViewInit {
 
   ngAfterViewInit() {
 
-    if(this.challengeDay == "1"){
+    if(this.challengeDay == 0){
+    }
+    if(this.challengeDay == 1){
       this.one.nativeElement.style.setProperty('background-color','var(--current-background-color)');
     }
-    else if(this.challengeDay == "2"){
+    else if(this.challengeDay == 2){
       this.one.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.two.nativeElement.style.setProperty('background-color','var(--current-background-color)');
     }
-    else if(this.challengeDay == "3"){
+    else if(this.challengeDay == 3){
       this.one.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.two.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.three.nativeElement.style.setProperty('background-color','var(--current-background-color)');
     }
-    else if(this.challengeDay == "4"){
+    else if(this.challengeDay == 4){
       this.one.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.two.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.three.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.four.nativeElement.style.setProperty('background-color','var(--current-background-color)');
     }
-    else if(this.challengeDay == "5"){
+    else if(this.challengeDay == 5){
       this.one.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.two.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.three.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.four.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.five.nativeElement.style.setProperty('background-color','var(--current-background-color)');
     }
-    else if(this.challengeDay == "6"){
+    else if(this.challengeDay == 6){
       this.one.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.two.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.three.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
@@ -67,7 +81,7 @@ export class SideMenuComponent implements OnInit,AfterViewInit {
       this.five.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.six.nativeElement.style.setProperty('background-color','var(--current-background-color)');
     }
-    else if(this.challengeDay == "7"){
+    else if(this.challengeDay == 7){
       this.one.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.two.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.three.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
@@ -76,7 +90,7 @@ export class SideMenuComponent implements OnInit,AfterViewInit {
       this.six.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.seven.nativeElement.style.setProperty('background-color','var(--current-background-color)');
     }
-    else if(this.challengeDay == "8"){
+    else if(this.challengeDay == 8){
       this.one.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.two.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.three.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
@@ -86,7 +100,7 @@ export class SideMenuComponent implements OnInit,AfterViewInit {
       this.seven.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.eight.nativeElement.style.setProperty('background-color','var(--current-background-color)');
     }
-    else if(this.challengeDay == "9"){
+    else if(this.challengeDay == 9){
       this.one.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.two.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.three.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
@@ -97,7 +111,7 @@ export class SideMenuComponent implements OnInit,AfterViewInit {
       this.eight.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.nine.nativeElement.style.setProperty('background-color','var(--current-background-color)');
     }
-    else if(this.challengeDay == "10"){
+    else if(this.challengeDay == 10){
       this.one.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.two.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.three.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
@@ -108,6 +122,18 @@ export class SideMenuComponent implements OnInit,AfterViewInit {
       this.eight.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.nine.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
       this.ten.nativeElement.style.setProperty('background-color','var(--current-background-color)');
+    }
+    else if(this.challengeDay >= 11){
+      this.one.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
+      this.two.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
+      this.three.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
+      this.four.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
+      this.five.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
+      this.six.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
+      this.seven.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
+      this.eight.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
+      this.nine.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
+      this.ten.nativeElement.style.setProperty('background-color','rgb(207, 52, 52)');
     }
     
   }

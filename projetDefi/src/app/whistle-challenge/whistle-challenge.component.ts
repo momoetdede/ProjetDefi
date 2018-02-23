@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user/user.service';
 
 @Component({
   selector: 'app-whistle-challenge',
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WhistleChallengeComponent implements OnInit {
 
-  constructor() { }
+  whistleDay;
+  user: UserService;
+  constructor(user:UserService) { 
+    this.user = user;
+    if(user.getCurrentChallengeName()!="Whistle challenge"){
+      this.whistleDay = 0;
+    }
+    else{
+      this.whistleDay = user.getCurrentChallengeDay();
+    }
+  }
 
   ngOnInit() {
   }
@@ -20,7 +31,7 @@ export class WhistleChallengeComponent implements OnInit {
     }
     if (!userData.activeChallenges.some(item => item.challengeName === "Whistle challenge")){
       console.log("add whistle challenge")
-      userData['activeChallenges'].push({"challengeName":"Whistle challenge","challengeStatus":"active","challengeDay":"1"});
+      userData['activeChallenges'].push({"challengeName":"Whistle challenge","challengeStatus":"active","challengeDay":1});
       location.reload();
     } else {
       alert("Challenge already saved.");
@@ -34,5 +45,15 @@ export class WhistleChallengeComponent implements OnInit {
     userData.whistleChallenge = 'cancelled';
     let userStr = JSON.stringify(userData);
     sessionStorage.user = userStr;
+  }
+
+  nextWhistleDay(){
+    this.user.nextDay();
+    location.reload();
+  }
+
+  previousWhistleDay(){
+    this.user.previousDay();
+    location.reload();
   }
 }

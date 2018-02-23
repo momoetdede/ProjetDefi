@@ -1,6 +1,99 @@
 <div  class="container article">
   <h1>Learn how to whistle in 10 hours ! </h1>
-  <p>You never achieved to whistle properly ? Try those ten easy steps to master this skill faster than you expected.
-  <br /><br />
-  <button (click)="registerWhistleChallenge()" >Start the whistle challenge !</button>
+  <!--Start-->
+  <div *ngIf="whistleDay==null;"> 
+    <p>You never achieved to whistle properly ? Try those ten easy steps to master this skill faster than you expected.
+    <br /><br />
+    <button (click)="registerWhistleChallenge()" >Start the whistle challenge !</button>
+  </div>
+
+  <!--Day 1-->
+  <div *ngIf="whistleDay==1;">
+    <p>Day 1</p><br /><br />
+    <div class="container back-next">
+      <div></div>
+      <button class="next-button" (click)="nextWhistleDay()">Next Step</button>
+    </div>
+  </div>
+
+  <!--Day 2-->
+  <div *ngIf="whistleDay==2;">
+    <p>Day 2</p><br /><br />
+    <div class="container back-next">
+      <button class="back-button" (click)="previousWhistleDay()">Back</button>
+      <button class="next-button" (click)="nextWhistleDay()">Next Step</button>
+    </div>
+  </div>
+  <!--Day 3-->
+  <div *ngIf="whistleDay==3;">
+    <p>Day 3</p><br /><br />
+    <div class="container back-next">
+      <button class="back-button" (click)="previousWhistleDay()">Back</button>
+      <button class="next-button" (click)="nextWhistleDay()">Next Step</button>
+    </div>
+  </div>
+  <!--Day 4-->
+  <div *ngIf="whistleDay==4;">
+    <p>Day 4</p><br /><br />
+    <div class="container back-next">
+      <button class="back-button" (click)="previousWhistleDay()">Back</button>
+      <button class="next-button" (click)="nextWhistleDay()">Next Step</button>
+    </div>
+  </div>
+  <!--Day 5-->
+  <div *ngIf="whistleDay==5;">
+    <p>Day 5</p><br /><br />
+    <div class="container back-next">
+      <button class="back-button" (click)="previousWhistleDay()">Back</button>
+      <button class="next-button" (click)="nextWhistleDay()">Next Step</button>
+    </div>
+  </div>
+  <!--Day 6-->
+  <div *ngIf="whistleDay==6;">
+    <p>Day 6</p><br /><br />
+    <div class="container back-next">
+      <button class="back-button" (click)="previousWhistleDay()">Back</button>
+      <button class="next-button" (click)="nextWhistleDay()">Next Step</button>
+    </div>
+  </div>
+  <!--Day 7-->
+  <div *ngIf="whistleDay==7;">
+    <p>Day 7</p><br /><br />
+    <div class="container back-next">
+      <button class="back-button" (click)="previousWhistleDay()">Back</button>
+      <button class="next-button" (click)="nextWhistleDay()">Next Step</button>
+    </div>
+  </div>
+  <!--Day 8-->
+  <div *ngIf="whistleDay==8;">
+    <p>Day 8</p><br /><br />
+    <div class="container back-next">
+      <button class="back-button" (click)="previousWhistleDay()">Back</button>
+      <button class="next-button" (click)="nextWhistleDay()">Next Step</button>
+    </div>
+  </div>
+  <!--Day 9-->
+  <div *ngIf="whistleDay==9;">
+    <p>Day 9</p><br /><br />
+    <div class="container back-next">
+      <button class="back-button" (click)="previousWhistleDay()">Back</button>
+      <button class="next-button" (click)="nextWhistleDay()">Next Step</button>
+    </div>
+  </div>
+  <!--Day 10-->
+  <div *ngIf="whistleDay==10;">
+    <p>Day 10</p><br /><br />
+    <div class="container back-next">
+      <button class="back-button" (click)="previousWhistleDay()">Back</button>
+      <button class="next-button" (click)="nextWhistleDay()">Finish !</button>
+    </div>
+  </div>
+  <!--End-->
+  <div *ngIf="whistleDay==11;"> 
+    <h3>Success !</h3>
+    <p>Congratz, you achieved the whistle challenge !
+    <br /><br />
+    <button routerLink="/challenges-component" >Start another challenge !</button>
+  </div>
+
 </div>

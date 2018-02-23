@@ -16,8 +16,9 @@
 
 .block_cote:hover
 {
-	background-color:rgb(207, 52, 52);
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+	background-color:var(--current-background-color);
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+	cursor: pointer;
 }
 
 #one{

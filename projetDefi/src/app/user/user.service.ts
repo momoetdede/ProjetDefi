@@ -11,6 +11,9 @@ export class UserService {
   }
 
   getCurrentChallengeName(){
+    if(this.userData.currentChallenge==null){
+      return 0;
+    }
     return this.userData.currentChallenge;
   }
 
@@ -23,5 +26,45 @@ export class UserService {
         }
       }
     }
+    else{
+      return 0;
+    }
   }
+
+  nextDay(){
+    if (this.getCurrentChallengeName()!=""){
+      for (var i = 0; i < this.userData.activeChallenges.length; i++){
+        if (this.userData.activeChallenges[i].challengeName == this.getCurrentChallengeName()){
+          this.userData.activeChallenges[i].challengeDay = this.getCurrentChallengeDay() + 1;
+          let userStr = JSON.stringify(this.userData);
+          sessionStorage.user = userStr;
+        }
+      }
+    }
+  }
+
+  previousDay(){
+    if (this.getCurrentChallengeName()!=""){
+      for (var i = 0; i < this.userData.activeChallenges.length; i++){
+        if (this.userData.activeChallenges[i].challengeName == this.getCurrentChallengeName()){
+          this.userData.activeChallenges[i].challengeDay = this.getCurrentChallengeDay() - 1;
+          let userStr = JSON.stringify(this.userData);
+          sessionStorage.user = userStr;
+        }
+      }
+    }
+  }
+
+  setCurrentChallengeDay(value){
+    if (this.getCurrentChallengeName()!=""){
+      for (var i = 0; i < this.userData.activeChallenges.length; i++){
+        if (this.userData.activeChallenges[i].challengeName == this.getCurrentChallengeName()){
+          this.userData.activeChallenges[i].challengeDay = value;
+          let userStr = JSON.stringify(this.userData);
+          sessionStorage.user = userStr;
+        }
+      }
+    }
+  }
+
 }
