@@ -1,15 +1,35 @@
 <div  class="container article">
-  <h1>Learn how to whistle in 10 hours ! </h1>
+  <h1>Learn how to whistle in 10 hours! </h1>
   <!--Start-->
   <div *ngIf="whistleDay==null;"> 
     <p>You never achieved to whistle properly ? Try those ten easy steps to master this skill faster than you expected.
-    <br /><br />
+    <br><br>
+    </p>
+    <div class="container imgArticle">
+    <img src="../../assets/gifs/mickeyWhistle.gif">
+    <br><br>
     <button (click)="registerWhistleChallenge()" >Start the whistle challenge !</button>
+    </div>
   </div>
 
   <!--Day 1-->
   <div *ngIf="whistleDay==1;">
-    <p>Day 1</p><br /><br />
+    <p>
+      Day 1:<br><br>
+      To achieve this challenge, you should try to start with the basics.<br>
+      Position your lips as if you were trying to pronounce the "u" sound and blow gently some air to see if it creates a sound.<br/>
+      You don't need to try to whistle loudly at the begining. Just try to have this first whistle sound.<br>
+    </p>
+    <h3>If you have it, keep it and repeat it!</h3>
+    <p>
+      <br>
+      When you feel you can reproduce this simple whistle with ease, you can then try to modulate the sound you produced moving your tongue inside your mouth.<br/>
+      It should create higher notes with your tongue up, and lower notes with the tongue down.<br>
+      <br>
+      Practice during small sessions of 10 minutes during the day.<br>
+      If you (or too many people around) you feel tired of it, take some time before going back to practice in better conditions!    
+    
+    </p>
     <div class="container back-next">
       <div></div>
       <button class="next-button" (click)="nextWhistleDay()">Next Step</button>

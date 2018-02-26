@@ -10,9 +10,9 @@
     <a routerLink="/register"><h4>Forgotten password?</h4></a> 
   </div>
   <ng-template #logged>
-    <h3>Welcome {{pseudo}} !</h3>
+    <h3>Welcome {{pseudo}}!</h3>
     <div *ngIf="currentChallenge!='';">
-      <p>Current challenge: {{currentChallenge}} !</p>
+      <h4>Current challenge: </h4><p>{{currentChallenge}}</p>
     </div>
   </ng-template>
   

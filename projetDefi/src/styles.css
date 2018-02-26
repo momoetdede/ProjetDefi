@@ -70,9 +70,9 @@ input[type=text],input[type=password],button {
 .bandeautop1{
     display: flex;
     width: 100%;
+	min-width: 500px;
     height: 60px;
     background-color: rgb(48, 48, 48);
-	min-width: 445px;
 }
 .bandeautop1 p{
 	font-family: customLogoFont, Tahoma, Geneva, sans-serif;

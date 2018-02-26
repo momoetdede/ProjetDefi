@@ -13,7 +13,7 @@ export class WhistleChallengeComponent implements OnInit {
   constructor(user:UserService) { 
     this.user = user;
     if(user.getCurrentChallengeName()!="Whistle challenge"){
-      this.whistleDay = 0;
+      this.whistleDay = null;
     }
     else{
       this.whistleDay = user.getCurrentChallengeDay();

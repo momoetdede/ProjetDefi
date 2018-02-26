@@ -7,7 +7,12 @@ export class UserService {
   userData;
 
   constructor() { 
-    this.userData = JSON.parse(sessionStorage.getItem('user'));
+    if(sessionStorage.getItem('user')==null){
+      this.userData = JSON.parse("{\"connected\":false}")
+    }
+    else {
+      this.userData = JSON.parse(sessionStorage.getItem('user'));
+    }
   }
 
   getCurrentChallengeName(){
