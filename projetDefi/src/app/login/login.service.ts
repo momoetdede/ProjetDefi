@@ -29,11 +29,11 @@ export class LoginService {
 
   sendLoginInfo(email,password) {
     console.log("envoi login")
-    console.log("http://vmws-redkoala.westeurope.cloudapp.azure.com:8181/projet/login-service?var1=login&var2="+email+
+    console.log("http://192.168.1.38:8081/projet/login-service?var1=login&var2="+email+
     '&var3='+password
     )
     alert("login...");
-    return this.httpClient.get("http://vmws-redkoala.westeurope.cloudapp.azure.com:8181/projet/login-service?var1=login&var2="+email+
+    return this.httpClient.get("http://192.168.1.38:8081/projet/login-service?var1=login&var2="+email+
     '&var3='+password
     );
  }
