@@ -29,11 +29,11 @@ export class LoginService {
 
   sendLoginInfo(email,password) {
     console.log("envoi login")
-    console.log("http://192.168.1.38:8081/projet/login-service?var1=login&var2="+email+
+    console.log("https://proxybatch.francecentral.cloudapp.azure.com/projet/login-service?var1=login&var2="+email+
     '&var3='+password
     )
     alert("login...");
-    return this.httpClient.get("http://192.168.1.38:8081/projet/login-service?var1=login&var2="+email+
+    return this.httpClient.get("https://proxybatch.francecentral.cloudapp.azure.com/projet/login-service?var1=login&var2="+email+
     '&var3='+password
     );
  }
